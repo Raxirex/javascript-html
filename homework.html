@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ege Çelikel's Triange Solver">
+  <meta name="keywords" content="HTML,CSS,Triangles,JavaScript">
+  <meta name="author" content="Ege Çelikel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<TITLE>Right Triangles</TITLE>
+<style>
+body {
+  background-color: rgba(118, 215, 200, 0.5);
+}
+.button {
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 12px;
+        border-radius: 10px;
+        margin:10px;
+        width: 20%;
+        font-size: 100%;
+    }
+.button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+</style>
+<SCRIPT language="JavaScript">
+function findTriangleProperties () {
+    alert ("Welcome to Math Tutor. We'll calculate right-angled triangle geometric properties");
+    var a = prompt("Please input the first sides length: ");
+    var b = prompt("Please input the second sides length: ");
+    document.getElementById("hyp").innerHTML = "Pythagoras Theorem Finding Hypotenuse: "+(Math.hypot(a, b));
+}
+var triangleArea = function() {
+  var base = parseFloat(document.getElementById('base').value);
+  var height = parseFloat(document.getElementById('height').value);
+
+  var output = document.getElementById('output');
+  if(isNaN(base) || isNaN(height)) {
+    output.textContent = "Enter numbers."
+  } else {
+    var area = 0.5 * base * height;
+    output.textContent = "Area = " + area;
+  }
+}
+var perimeter = function() {
+  var e = parseFloat(document.getElementById('1').value);
+  var z = parseFloat(document.getElementById('2').value);
+  var x = parseFloat(document.getElementById('3').value);
+  var output = document.getElementById('outputPerimeter');
+  if(isNaN(e) || isNaN(z) || isNaN(x)) {
+    output.textContent = "Enter numbers."
+  }else {
+    var perimeter = e + z + x;
+    output.textContent = "Perimeter is :" + perimeter;
+  }
+}
+var triangleAngles = function() {
+  var firstAngle = parseFloat(document.getElementById('firstAngle').value);
+  var secondAngle = parseFloat(document.getElementById('secondAngle').value);
+  var output = document.getElementById('output1');
+  if (isNaN(firstAngle) || isNaN(secondAngle) ) {
+    output.textContent = "Please enter a valid value";
+
+  } else {
+
+    var angleThird = 180-(firstAngle+secondAngle);
+    output.textContent = "Third Angle is  " + angleThird;
+  }
+
+
+
+
+
+}
+</SCRIPT>
+</head>
+<body>
+  <h1> Area of a triangle<h1>
+  <p>
+    Base: <input type= "text" size="4" id="base">
+    Height: <input type="text" size="4" id="height">
+    <br>
+    <button type="button" onclick="triangleArea()"> Area of the triangle</button>
+  <p id="output">Area = ??</p>
+<p>
+  Perimeter 1 : <input type= "text" size="4" id="1">
+  Perimeter 2 : <input type= "text" size="4" id="2">
+  Perimeter 3 : <input type= "text" size="4" id="3">
+  <button type="button" onclick="perimeter()"> Perimeter of the triangle given</button>
+</p>
+<p id="outputPerimeter">Perimeter = ??</p>
+  </p>
+  <p id="hyp"></p>
+<p>A right triangle is a triangle in which one angle is a right angle (that is, a 90-degree angle). The relation between the sides and angles of a right triangle is the basis for trigonometry.<p>
+<p>Like any polygon, the perimeter is the total distance around the outside, which can be found by adding together the length of each side. Or as a formula:
+<p>Perimeter	=	a	+	b	+	c
+where:
+a,b and c are the lengths of each side of the triangle
+</p>
+<p id="asd"></p>
+-
+<h1>Angle Calculate</h1>
+<p>
+  First Angle : <input type="text"  size="4" id="firstAngle">
+  Second Angle: <input type="text"  size="4" id="secondAngle">
+  <br>
+  <button type="button" onclick="triangleAngles()">ANGLE</button>
+
+
+</p>
+<p id="output1">
+Angle is:
+</p>
+-
+<p>
+<span style="color:red; font-weight: bold;">findTriangleProperties:</span>
+</p>
+<div class="button" width="60" height="100" onClick="findTriangleProperties()">Press here to calculate the Hypotenuse, which will appear after your press.</div>
+</body>
